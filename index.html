@@ -20,5 +20,25 @@
       <br><br>
       <input type="submit" value="Purchase">
     </form>
+
+    <script>
+      const numTicketsInput = document.querySelector('#num-tickets');
+      const ticketTypeSelect = document.querySelector('#ticket-type');
+      const totalCostInput = document.querySelector('#total-cost');
+
+      ticketTypeSelect.addEventListener('change', function() {
+        let cost = 0;
+        const numTickets = numTicketsInput.value;
+        const ticketType = ticketTypeSelect.value;
+
+        if (ticketType === 'standard') {
+          cost = numTickets * 10;
+        } else if (ticketType === 'premium') {
+          cost = numTickets * 20;
+        }
+
+        totalCostInput.value = cost;
+      });
+    </script>
   </body>
 </html>
